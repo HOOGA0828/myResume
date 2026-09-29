@@ -23,7 +23,7 @@ export default function Home() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-copy">
           <div className="availability"><span /> FRONTEND ENGINEER · KAOHSIUNG</div>
-          <h1>把想法做成<br /><em>真正能用</em>的產品。</h1>
+          <h1><span className="hero-title-line">把想法做成</span><span className="hero-title-line"><em>真正能用</em>的產品。</span></h1>
           <p className="hero-lead">我是鄭韋新，擁有 3 年 React 開發經驗。善用 AI Agent 擴張一人開發的邊界，從介面、資料到部署，把複雜需求整理成清楚、可用的數位體驗。</p>
           <div className="hero-actions"><a href="#projects" className="primary-button">看我的實作 <ArrowDown /></a></div>
         </div>

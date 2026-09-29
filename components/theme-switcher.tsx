@@ -14,6 +14,7 @@ type ThemeId = (typeof themes)[number]["id"];
 
 export function ThemeSwitcher() {
   const [activeTheme, setActiveTheme] = useState<ThemeId>("sunset");
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.dataset.theme = activeTheme;
@@ -22,12 +23,22 @@ export function ThemeSwitcher() {
 
   const selectTheme = (theme: ThemeId) => {
     setActiveTheme(theme);
+    setIsOpen(false);
   };
 
   return (
-    <aside className="theme-switcher" aria-label="履歷主色系選擇">
+    <aside className="theme-switcher" aria-label="履歷主色系選擇" data-open={isOpen}>
+      <button
+        type="button"
+        className="theme-trigger"
+        aria-label="選擇主色系"
+        aria-controls="theme-options"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((open) => !open)}
+        style={{ "--swatch": themes.find((theme) => theme.id === activeTheme)?.color } as CSSProperties}
+      />
       <span className="theme-switcher-label">THEME</span>
-      <div className="theme-options">
+      <div className="theme-options" id="theme-options">
         {themes.map((theme) => (
           <button
             aria-label={`切換為${theme.label}主色系`}
