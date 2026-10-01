@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T09:06:25Z",
+  "title": "Design System: 鄭韋新",
+  "extensions": {
+    "colorMeta": {
+      "root-mint": {
+        "role": "primary",
+        "displayName": "Original mint",
+        "canonical": "#8ef0d0"
+      },
+      "works-accent": {
+        "role": "primary",
+        "displayName": "Contact-sheet orange",
+        "canonical": "#ff704d"
+      },
+      "career-accent": {
+        "role": "primary",
+        "displayName": "Field-report vermilion",
+        "canonical": "#bd432d"
+      },
+      "works-background": {
+        "role": "neutral",
+        "displayName": "Contact-sheet background",
+        "canonical": "#101512"
+      },
+      "career-paper": {
+        "role": "neutral",
+        "displayName": "Field-report paper",
+        "canonical": "#f1f0eb"
+      }
+    },
+    "typographyMeta": {
+      "root-display": {
+        "displayName": "Original homepage display",
+        "purpose": "Sans-serif hero headline on /."
+      },
+      "works-display": {
+        "displayName": "Work contact-sheet display",
+        "purpose": "Name at the beginning of /resume/works."
+      },
+      "works-headline": {
+        "displayName": "Work project headline",
+        "purpose": "Serif project titles on /resume/works."
+      },
+      "career-display": {
+        "displayName": "Career report display",
+        "purpose": "Name at the beginning of /resume/career."
+      },
+      "career-headline": {
+        "displayName": "Career report headline",
+        "purpose": "Section titles on /resume/career."
+      }
+    },
+    "shadows": [
+      {
+        "name": "root-console",
+        "value": "0 24px 64px rgba(0,0,0,.25)",
+        "purpose": "Homepage console after the final layout pass."
+      },
+      {
+        "name": "root-primary-hover",
+        "value": "7px 7px 0 var(--coral)",
+        "purpose": "Homepage primary action on hover."
+      }
+    ],
+    "motion": [
+      {
+        "name": "root-action-hover",
+        "value": "transform .2s ease, box-shadow .2s ease",
+        "purpose": "Homepage primary action."
+      },
+      {
+        "name": "works-image-hover",
+        "value": "transform .45s cubic-bezier(.2,.8,.2,1)",
+        "purpose": "Small image zoom in work feature and project spreads."
+      },
+      {
+        "name": "career-image-hover",
+        "value": "transform .35s ease",
+        "purpose": "Small image zoom in career project rows."
+      },
+      {
+        "name": "resume-reduced-motion",
+        "value": "animation-duration: .01ms; transition-duration: .01ms",
+        "purpose": "Implemented in both resume routes under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      { "name": "root-stack", "value": "1000px" },
+      { "name": "root-mobile", "value": "720px" },
+      { "name": "works-stack", "value": "1100px" },
+      { "name": "works-mobile", "value": "700px" },
+      { "name": "career-stack", "value": "1100px" },
+      { "name": "career-mobile", "value": "760px" },
+      { "name": "career-narrow", "value": "500px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Original primary action",
+      "kind": "button",
+      "refersTo": "root-primary-button",
+      "description": "Square mint homepage link with a coral offset shadow on hover; route /.",
+      "html": "<a class=\"ds-root-primary\" href=\"#projects\">瀏覽作品 ↗</a>",
+      "css": ".ds-root-primary{display:inline-flex;align-items:center;gap:18px;padding:17px 20px 17px 24px;background:#8ef0d0;color:#080a0d;font:800 14px Inter,'Noto Sans TC',sans-serif;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}.ds-root-primary:hover{transform:translateY(-3px);box-shadow:7px 7px 0 #ff6d4a}.ds-root-primary:focus-visible{outline:2px solid #8ef0d0;outline-offset:4px}"
+    },
+    {
+      "name": "Original project entry",
+      "kind": "card",
+      "refersTo": "root-project-card",
+      "description": "Flat final-layout project row with a fine top rule; route /.",
+      "html": "<article class=\"ds-root-project\"><span>01 / PROJECT</span><h3>共筆下一頁</h3><p>互動式 AI 生成小說網站</p></article>",
+      "css": ".ds-root-project{border-top:1px solid #bdc8c1;background:transparent;color:#101316;padding:20px 0 36px;font-family:Inter,'Noto Sans TC',sans-serif}.ds-root-project>span{font:700 12px 'JetBrains Mono',monospace;color:#69716e}.ds-root-project h3{margin:22px 0 8px;font-size:clamp(2.5rem,3.8vw,4rem);line-height:1.12;letter-spacing:-.035em}.ds-root-project p{margin:0;color:#59615d;font-size:1rem;line-height:1.8}"
+    },
+    {
+      "name": "Works navigation",
+      "kind": "nav",
+      "description": "Sticky dark contact-sheet navigation; route /resume/works.",
+      "html": "<nav class=\"ds-works-nav\" aria-label=\"作品先行履歷導覽\"><strong>鄭韋新 <em>/ WS</em></strong><a href=\"#projects\">作品</a><a href=\"#experience\">經歷</a><a href=\"#about\">關於</a></nav>",
+      "css": ".ds-works-nav{display:flex;align-items:center;gap:28px;min-height:72px;padding:0 22px;border-bottom:1px solid #36463b;background:#101512;color:#f4f2e9;font-family:'Noto Sans TC',sans-serif}.ds-works-nav strong{margin-right:auto;font-size:1rem}.ds-works-nav em{font-size:.75rem;font-style:normal;color:#ff704d}.ds-works-nav a{color:inherit;text-decoration:none;font-size:.8125rem;font-weight:650;transition:color .2s ease}.ds-works-nav a:hover{color:#ff704d}.ds-works-nav a:focus-visible{outline:2px solid #ff704d;outline-offset:4px}@media(max-width:700px){.ds-works-nav{min-height:62px;gap:14px;padding-inline:20px}.ds-works-nav em{display:none}.ds-works-nav a{font-size:.75rem}}"
+    },
+    {
+      "name": "Works image index",
+      "kind": "nav",
+      "refersTo": "works-work-index",
+      "description": "Numbered image contact strip with horizontal scrolling on narrower screens; route /resume/works.",
+      "html": "<nav class=\"ds-works-strip\" aria-label=\"四個作品索引\"><a href=\"#work-01\"><span>01</span><img src=\"/projects/next-story.png\" alt=\"\"><strong>共筆下一頁</strong></a><a href=\"#work-02\"><span>02</span><img src=\"/projects/japan-weather.png\" alt=\"\"><strong>日本即時氣象地圖</strong></a></nav>",
+      "css": ".ds-works-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#101512;font-family:'Noto Sans TC',sans-serif}.ds-works-strip a{display:grid;grid-template-columns:auto 84px 1fr;align-items:center;gap:14px;min-width:0;padding:13px 14px;border-top:1px solid #607065;background:#1b241e;color:#f4f2e9;text-decoration:none;transition:background .2s ease}.ds-works-strip a:hover{background:#2a382d}.ds-works-strip a:focus-visible{outline:2px solid #ff704d;outline-offset:-2px}.ds-works-strip span{align-self:start;color:#ff704d;font-size:.75rem;font-weight:700}.ds-works-strip img{width:84px;height:54px;object-fit:cover}.ds-works-strip strong{font-size:.875rem;line-height:1.35;font-weight:650}@media(max-width:700px){.ds-works-strip{display:flex;overflow-x:auto}.ds-works-strip a{flex:0 0 215px}}"
+    },
+    {
+      "name": "Works technology tag",
+      "kind": "chip",
+      "refersTo": "works-tag",
+      "description": "Square outlined technology tag on the dark contact sheet; route /resume/works.",
+      "html": "<span class=\"ds-works-tag\">React</span>",
+      "css": ".ds-works-tag{display:inline-block;padding:6px 9px;border:1px solid #506157;color:#b6c1b8;background:transparent;font:500 .75rem 'Noto Sans TC',sans-serif}"
+    },
+    {
+      "name": "Works project spread",
+      "kind": "card",
+      "description": "Large real screenshot paired with a numbered editorial project description; route /resume/works.",
+      "html": "<article class=\"ds-works-project\"><img src=\"/projects/japan-weather.png\" alt=\"日本即時氣象地圖與各縣市溫度畫面\"><div><p class=\"ds-works-project-meta\">02 / 04　　資料視覺化</p><h2>日本即時氣象地圖</h2><p class=\"ds-works-project-subtitle\">把氣象 API 轉成可探索的資訊介面</p><p class=\"ds-works-project-description\">串接即時氣象資料，將多城市資訊映射到互動地圖。</p><a href=\"https://vue3-weather-zeta.vercel.app/\">查看作品 ↗</a></div></article>",
+      "css": ".ds-works-project{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:center;gap:clamp(48px,7vw,120px);padding:60px 0;border-top:1px solid #4c5d52;background:#101512;color:#f4f2e9;font-family:'Noto Sans TC',sans-serif}.ds-works-project>img{display:block;width:100%;aspect-ratio:1.52;object-fit:cover;transition:transform .45s cubic-bezier(.2,.8,.2,1)}.ds-works-project:hover>img{transform:scale(1.025)}.ds-works-project-meta,.ds-works-project-subtitle{color:#ff704d;font-size:.8125rem;font-weight:700}.ds-works-project h2{margin:26px 0 10px;font-family:'Resume Serif TC',serif;font-size:clamp(2.7rem,4vw,4.75rem);line-height:1.17;letter-spacing:-.035em}.ds-works-project-description{color:#b6c1b8;font-size:1rem;line-height:1.85}.ds-works-project a{display:block;margin-top:38px;padding:18px 0;border-top:1px solid #506157;color:#f4f2e9;font-size:.875rem;font-weight:750;text-decoration:none}.ds-works-project a:hover{color:#ff704d}.ds-works-project a:focus-visible{outline:2px solid #ff704d;outline-offset:4px}@media(max-width:1100px){.ds-works-project{grid-template-columns:1fr;gap:30px}}"
+    },
+    {
+      "name": "Career navigation",
+      "kind": "nav",
+      "description": "Sticky paper navigation with an ink rule; route /resume/career.",
+      "html": "<nav class=\"ds-career-nav\" aria-label=\"經歷先行履歷導覽\"><strong>鄭韋新 <em>/ 履歷</em></strong><a href=\"#experience\">經歷</a><a href=\"#skills\">專長</a><a href=\"#projects\">作品</a></nav>",
+      "css": ".ds-career-nav{display:flex;align-items:center;gap:28px;min-height:68px;padding:0 24px;border-bottom:1px solid #1a2935;background:#f1f0eb;color:#1a2935;font-family:'Noto Sans TC',sans-serif}.ds-career-nav strong{margin-right:auto;font-size:.9375rem;font-weight:800}.ds-career-nav em{font-size:.75rem;font-style:normal;color:#bd432d}.ds-career-nav a{color:inherit;text-decoration:none;font-size:.8125rem;font-weight:700}.ds-career-nav a:hover{color:#bd432d}.ds-career-nav a:focus-visible{outline:2px solid #bd432d;outline-offset:4px}@media(max-width:760px){.ds-career-nav{min-height:60px;gap:15px;padding-inline:20px}.ds-career-nav em{display:none}.ds-career-nav a{font-size:.75rem}}"
+    },
+    {
+      "name": "Career skill cell",
+      "kind": "card",
+      "refersTo": "career-skill-cell",
+      "description": "Rule-bounded capability grid cell; route /resume/career.",
+      "html": "<article class=\"ds-career-skill\"><span>01</span><h3>前端產品開發</h3><p>React、Next.js、TypeScript、Vue 3；從元件架構到響應式介面。</p></article>",
+      "css": ".ds-career-skill{min-height:215px;padding:25px 27px 30px;border:1px solid #bfc7c7;background:transparent;color:#1a2935;font-family:'Noto Sans TC',sans-serif}.ds-career-skill>span{color:#bd432d;font-size:.75rem;font-weight:800}.ds-career-skill h3{margin:35px 0 10px;font-size:1.375rem}.ds-career-skill p{max-width:48ch;margin:0;color:#52616a;font-size:.9375rem;line-height:1.75}@media(max-width:500px){.ds-career-skill{min-height:0;padding:20px}.ds-career-skill h3{margin-top:25px;font-size:1.125rem}}"
+    },
+    {
+      "name": "Career project row",
+      "kind": "card",
+      "description": "Number, project details, and real screenshot in a rule-separated report row; route /resume/career.",
+      "html": "<article class=\"ds-career-project\"><p>01 / 04<br><small>互動敘事</small></p><div><h3>共筆下一頁</h3><strong>互動式 AI 生成小說網站</strong><p>把閱讀變成共同創作。讀者不只翻頁，還能選擇故事走向。</p><a href=\"https://nextstory.hoogaworld.com/\">查看作品 ↗</a></div><img src=\"/projects/next-story.png\" alt=\"共筆下一頁網站首頁畫面\"></article>",
+      "css": ".ds-career-project{display:grid;grid-template-columns:100px minmax(0,1fr) minmax(220px,.62fr);gap:clamp(22px,3vw,50px);padding:48px 0;border-top:1px solid #bfc7c7;background:#f1f0eb;color:#1a2935;font-family:'Noto Sans TC',sans-serif}.ds-career-project>p{margin:0;color:#bd432d;font-size:.75rem;font-weight:800}.ds-career-project>p small{color:#52616a;font-size:.6875rem;font-weight:600}.ds-career-project h3{margin:-7px 0 6px;font-family:'Resume Serif TC',serif;font-size:clamp(1.85rem,2.8vw,3.1rem);line-height:1.22;letter-spacing:-.035em}.ds-career-project strong{color:#bd432d;font-size:.875rem}.ds-career-project div>p{max-width:52ch;color:#52616a;font-size:.9375rem;line-height:1.8}.ds-career-project a{display:inline-block;margin-top:16px;padding-bottom:7px;border-bottom:1px solid #bd432d;color:#1a2935;font-size:.8125rem;font-weight:800;text-decoration:none}.ds-career-project a:hover{color:#bd432d}.ds-career-project a:focus-visible{outline:2px solid #bd432d;outline-offset:4px}.ds-career-project img{display:block;width:100%;aspect-ratio:1.44;object-fit:cover}@media(max-width:1100px){.ds-career-project{grid-template-columns:70px minmax(0,1fr)}.ds-career-project img{grid-column:2;max-width:420px}}@media(max-width:760px){.ds-career-project{grid-template-columns:1fr}.ds-career-project img{grid-column:1}}"
+    },
+    {
+      "name": "Career contact action",
+      "kind": "button",
+      "refersTo": "career-contact",
+      "description": "Full-width ink contact link with pale text and vermilion marker; route /resume/career.",
+      "html": "<a class=\"ds-career-contact\" href=\"https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=popo51102@gmail.com\"><span>✉ 使用 Gmail 聯絡我<small>popo51102@gmail.com</small></span><b>↗</b></a>",
+      "css": ".ds-career-contact{display:flex;justify-content:space-between;align-items:center;gap:20px;width:min(100%,600px);padding:23px 25px;background:#1a2935;color:#fff;text-decoration:none;font-family:'Noto Sans TC',sans-serif}.ds-career-contact span{font-size:.9375rem;font-weight:750}.ds-career-contact small{display:block;margin-top:5px;color:#c1cacc;font-size:.75rem;font-weight:500}.ds-career-contact b{color:#ff7458;font-size:1.25rem}.ds-career-contact:focus-visible{outline:2px solid #bd432d;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Three ways to read one engineer",
+    "overview": "The existing `/` page is a dark digital studio portfolio: mint interface light, a code console, large sans-serif type, and occasional bright project accents. It remains its own visual world.\n\nThe two recruiting resumes deliberately change the reading order and visual language. `/resume/works` is a dark editorial contact sheet led by real project screenshots. `/resume/career` is a light technical field report led by dated work history. Their CSS variables live on the route roots, so these palettes and typographic roles apply only to their named routes. All three retain the real portrait and project images and use Traditional Chinese as the reading language.",
+    "keyCharacteristics": [
+      "The same portrait and four project screenshots in three distinct presentations.",
+      "`/resume/works`: near-black green, warm white, orange-red, large unframed screenshots, and continuous project numbers.",
+      "`/resume/career`: pale paper, deep ink blue, vermilion marks, fine rules, and a visible chronological spine.",
+      "Square, editorial surfaces on the new routes; restrained motion and visible keyboard focus."
+    ],
+    "rules": [
+      {
+        "name": "The Route Palette Rule",
+        "body": "Use the `root-*` tokens on `/`, `works-*` on `/resume/works`, and `career-*` on `/resume/career`. The few light sections inside `/resume/works` are intentional editorial reversals, not a fourth global theme.",
+        "section": "colors"
+      },
+      {
+        "name": "The Evidence Type Rule",
+        "body": "On the two resume routes, reserve the serif for names and editorial headings; keep descriptions, dates, controls, and metadata in the route's sans-serif body stack.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Resume Rule",
+        "body": "Keep both recruiting routes flat; screenshots, contrast, spacing, and fine rules already separate their content.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the homepage's mint digital-studio styling scoped to `/`.",
+      "Do use the real portrait and project screenshots as content on both resume routes.",
+      "Do preserve the work-first reading order on `/resume/works` and the dated history-first reading order on `/resume/career`.",
+      "Do preserve visible focus outlines and the mobile single-column reading order."
+    ],
+    "donts": [
+      "Don't apply the dark contact-sheet palette to the light career report or the paper report's vermilion as the works route accent.",
+      "Don't wrap resume screenshots in invented device frames or replace them with abstract illustrations.",
+      "Don't introduce raised cards or ornamental shadows into the two flat resume routes."
+    ]
+  }
+}

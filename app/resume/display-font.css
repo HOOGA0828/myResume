@@ -1,0 +1,7 @@
+@font-face{
+  font-family:"Resume Serif TC";
+  src:url("/fonts/noto-serif-tc-resume.ttf") format("truetype");
+  font-style:normal;
+  font-weight:200 900;
+  font-display:swap;
+}
