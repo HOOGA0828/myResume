@@ -196,3 +196,34 @@ section[id]{scroll-margin-top:76px}
   .console-body p>span{width:26px}
   .project-link{grid-template-columns:auto minmax(0,1fr) auto}
 }
+
+/* Lead with the personal story; close with the introduction and contact action. */
+.hero-console,.hero-story,.development-copy{position:relative;z-index:1;min-width:0}
+.hero{grid-template-columns:minmax(0,1fr)}
+.hero-story{width:100%;align-self:center}
+.hero .story-layout{max-width:1440px;margin-inline:auto;padding-top:0}
+.story-project-button{width:min(100%,310px);margin-top:34px;justify-content:space-between}
+.development-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(360px,.75fr);align-items:center;gap:clamp(36px,4vw,64px);padding-top:48px}
+.development-copy h1{margin:24px 0;font-size:clamp(2.75rem,4.2vw,4.25rem);font-weight:760;letter-spacing:-.035em;line-height:1.12}
+.development-copy h1 em{position:relative;color:var(--mint);font-style:normal}
+.development-copy h1 em::after{content:"";position:absolute;left:0;right:0;bottom:1px;height:5px;background:var(--coral);transform:rotate(-1.2deg) scaleX(.92);transform-origin:left}
+.development-copy .story-contact{margin-top:32px}
+
+@media(max-width:1000px){
+  .hero .story-layout{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
+  .hero .story-statement{grid-row:span 2}
+  .development-layout{grid-template-columns:minmax(0,1fr);gap:40px}
+  .development-layout .hero-console{justify-self:start}
+}
+
+@media(max-width:720px){
+  .hero .story-layout{grid-template-columns:minmax(0,1fr);gap:36px}
+  .hero .story-statement{grid-row:auto}
+  .hero .story-statement p{font-size:clamp(1.625rem,7vw,2.25rem)}
+  .story-project-button{margin-top:28px}
+  .development-layout{padding-top:36px}
+  .development-copy h1{font-size:clamp(2.75rem,9.5vw,4rem)}
+}
+@media(max-width:380px){
+  .development-copy h1{font-size:2.6rem}
+}

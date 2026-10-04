@@ -157,7 +157,7 @@ The two recruiting resumes deliberately change the reading order and visual lang
 
 ## Layout
 
-The original `/` uses a wide two-column hero, a console, then a light project section and darker expertise/story sections. Its final layout pass sets a responsive page gutter (`root-page-gutter`), section rhythm (`root-section-space`), and a `1440px` inner content limit. At `1000px` the hero and project cards stack; at `720px` the content narrows further.
+The original `/` keeps its dark digital studio palette. Its opening uses the full width for the portrait, personal statement, biography, and experience timeline, with the project CTA below the portrait statement. The promise, introduction, Gmail contact action, and code console sit together in the final development snapshot section. Its layout uses a responsive page gutter (`root-page-gutter`), section rhythm (`root-section-space`), and a `1440px` inner content limit. At `1000px` the profile becomes two columns while project cards and the development snapshot stack; the profile becomes one column at `720px`.
 
 `/resume/works` begins with a `0.82fr / 1.18fr` opening split and a large `1.87` aspect-ratio featured screenshot. Four numbered work links form a contact strip. Subsequent project spreads alternate image and copy across `1.2fr / .8fr` and `.8fr / 1.2fr` columns. The page turns to pale green for capabilities, dark green for history, and warm paper for the portrait and contact. At `1100px` these layouts stack and the work strip scrolls horizontally; at `700px` the page uses `20px` side padding and a single reading column.
 

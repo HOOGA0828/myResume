@@ -21,26 +21,17 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-copy">
-          <div className="availability"><span /> FRONTEND ENGINEER · KAOHSIUNG</div>
-          <h1><span className="hero-title-line">把想法做成</span><span className="hero-title-line"><em>真正能用</em>的產品。</span></h1>
-          <p className="hero-lead">我是鄭韋新，擁有 3 年 React 開發經驗。善用 AI Agent 擴張一人開發的邊界，從介面、資料到部署，把複雜需求整理成清楚、可用的數位體驗。</p>
-          <div className="hero-actions"><a href="#projects" className="primary-button">看我的實作 <ArrowDown /></a></div>
-        </div>
-        <div className="hero-console" aria-label="開發能力摘要">
-          <div className="console-bar"><span><i /><i /><i /></span><b>build-profile.ts</b><span>⌘ K</span></div>
-          <div className="console-body">
-            <p><span>01</span><b>const</b> engineer = &#123;</p><p><span>02</span>&nbsp;&nbsp;name: <em>&quot;鄭韋新&quot;</em>,</p>
-            <p><span>03</span>&nbsp;&nbsp;focus: [<em>&quot;React&quot;</em>, <em>&quot;Product UX&quot;</em>],</p><p><span>04</span>&nbsp;&nbsp;mode: <em>&quot;AI-augmented&quot;</em>,</p>
-            <p><span>05</span>&#125;;</p>
+        <section className="hero-story story-layout" id="story" aria-label="個人介紹與工作經歷">
+          <div className="story-statement"><figure className="profile-photo"><div className="profile-image"><img src="/profile.jpg" alt="鄭韋新大頭貼" /></div></figure><Languages /><p>跨出舒適圈，<br />也跨出技術的邊界。</p><a href="#projects" className="primary-button story-project-button">看我的實作 <ArrowDown /></a></div><div className="story-text"><p>在 30 歲前往日本語言學校，是一次主動選擇陌生的挑戰。那段經驗訓練了我的獨立解題、快速適應與跨文化溝通，也讓我更確定：面對新的技術與環境，我願意先走出去，再把它學會。</p><p>回到台灣後，我把這份韌性放進每一次實作。持續精進 React、Next.js、Tailwind CSS 與 Vue，並用 AI 工具突破一人開發的邊界。</p></div><div className="timeline">
+            <div className="timeline-item current"><span>2022 — 2025</span><h3>前端工程師</h3><p>吉樂健康資訊科技</p><small>課程首頁與論壇改版、內部後台、WebView 協作、高齡使用者體驗優化</small></div>
+            <div className="timeline-item"><span>2022</span><h3>前端工程師</h3><p>金富達科技</p><small>React、Styled Components、Google 登入與 API 串接</small></div>
+            <div className="timeline-item"><span>2021</span><h3>前端工程師養成班</h3><p>資策會</p><small>前後端、資料庫、Git 與團隊專案開發</small></div>
           </div>
-          <div className="console-metrics"><div><strong>3+</strong><span>YEARS / FRONTEND</span></div><div><strong>4</strong><span>CODEX / SIDE PROJECTS</span></div></div>
-        </div>
+        </section>
         <a className="scroll-cue" href="#projects"><span>SCROLL TO EXPLORE</span><i /></a>
       </section>
 
-      <section className="projects-section" id="projects">
-        <div className="section-intro"><div><span className="section-index">01 / SELECTED WORK</span><h2>用 Codex，<br />把 side project 做到底。</h2></div><p>每一個作品都從真實興趣或需求出發。不是停在概念，而是走完規劃、實作、整合與上線的完整路徑。</p></div>
+      <section className="projects-section" id="projects" aria-label="作品列表">
         <div className="project-list">
           {projects.map((project) => (
             <article className={`project-card ${project.tone}`} key={project.number}>
@@ -62,13 +53,25 @@ export default function Home() {
         <div className="tech-marquee" aria-label="技術清單"><div className="tech-marquee-track"><span>REACT <i /> TYPESCRIPT <i /> NEXT.JS <i /> VUE 3 <i /> TAILWIND CSS <i /> SUPABASE <i /> NODE.JS <i /> D3.JS <i /> GITHUB ACTIONS <i /> CLOUDFLARE <i /></span><span aria-hidden="true">REACT <i /> TYPESCRIPT <i /> NEXT.JS <i /> VUE 3 <i /> TAILWIND CSS <i /> SUPABASE <i /> NODE.JS <i /> D3.JS <i /> GITHUB ACTIONS <i /> CLOUDFLARE <i /></span></div></div>
       </section>
 
-      <section className="story-section" id="story">
-        <div className="section-label"><span>03</span><p>STORY / EXPERIENCE</p></div>
-        <div className="story-layout"><div className="story-statement"><figure className="profile-photo"><div className="profile-image"><img src="/profile.jpg" alt="鄭韋新大頭貼" /></div></figure><Languages /><p>跨出舒適圈，<br />也跨出技術的邊界。</p><a className="story-contact" href="https://mail.google.com/mail/?view=cm&fs=1&to=popo51102@gmail.com" target="_blank" rel="noreferrer" aria-label="使用 Gmail 寄信給鄭韋新"><Mail /><span>使用 Gmail 聯絡我<small>popo51102@gmail.com</small></span><ArrowUpRight /></a></div><div className="story-text"><p>在 30 歲前往日本語言學校，是一次主動選擇陌生的挑戰。那段經驗訓練了我的獨立解題、快速適應與跨文化溝通，也讓我更確定：面對新的技術與環境，我願意先走出去，再把它學會。</p><p>回到台灣後，我把這份韌性放進每一次實作。持續精進 React、Next.js、Tailwind CSS 與 Vue，並用 AI 工具突破一人開發的邊界。</p></div><div className="timeline">
-          <div className="timeline-item current"><span>2022 — 2025</span><h3>前端工程師</h3><p>吉樂健康資訊科技</p><small>課程首頁與論壇改版、內部後台、WebView 協作、高齡使用者體驗優化</small></div>
-          <div className="timeline-item"><span>2022</span><h3>前端工程師</h3><p>金富達科技</p><small>React、Styled Components、Google 登入與 API 串接</small></div>
-          <div className="timeline-item"><span>2021</span><h3>前端工程師養成班</h3><p>資策會</p><small>前後端、資料庫、Git 與團隊專案開發</small></div>
-        </div></div>
+      <section className="story-section" id="development">
+        <div className="section-label"><span>03</span><p>BUILD PROFILE / DEVELOPMENT SNAPSHOT</p></div>
+        <div className="development-layout">
+          <div className="development-copy">
+            <div className="availability"><span /> FRONTEND ENGINEER · KAOHSIUNG</div>
+            <h1><span className="hero-title-line">把想法做成</span><span className="hero-title-line"><em>真正能用</em>的產品。</span></h1>
+            <p className="hero-lead">我是鄭韋新，擁有 3 年 React 開發經驗。善用 AI Agent 擴張一人開發的邊界，從介面、資料到部署，把複雜需求整理成清楚、可用的數位體驗。</p>
+            <a className="story-contact" href="https://mail.google.com/mail/?view=cm&fs=1&to=popo51102@gmail.com" target="_blank" rel="noreferrer" aria-label="使用 Gmail 寄信給鄭韋新"><Mail /><span>使用 Gmail 聯絡我<small>popo51102@gmail.com</small></span><ArrowUpRight /></a>
+          </div>
+          <div className="hero-console" aria-label="開發能力摘要">
+            <div className="console-bar"><span><i /><i /><i /></span><b>build-profile.ts</b><span>⌘ K</span></div>
+            <div className="console-body">
+              <p><span>01</span><b>const</b> engineer = &#123;</p><p><span>02</span>&nbsp;&nbsp;name: <em>&quot;鄭韋新&quot;</em>,</p>
+              <p><span>03</span>&nbsp;&nbsp;focus: [<em>&quot;React&quot;</em>, <em>&quot;Product UX&quot;</em>],</p><p><span>04</span>&nbsp;&nbsp;mode: <em>&quot;AI-augmented&quot;</em>,</p>
+              <p><span>05</span>&#125;;</p>
+            </div>
+            <div className="console-metrics"><div><strong>3+</strong><span>YEARS / FRONTEND</span></div><div><strong>4</strong><span>CODEX / SIDE PROJECTS</span></div></div>
+          </div>
+        </div>
       </section>
       <ThemeSwitcher />
     </main>
